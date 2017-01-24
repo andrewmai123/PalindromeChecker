@@ -1,5 +1,6 @@
 public void setup()
 {
+
   String lines[] = loadStrings("palindromes.txt");
   println("there are " + lines.length + " lines");
   for (int i=0; i < lines.length; i++) 
@@ -41,10 +42,36 @@ public String reverse(String str)
     return sNew;
 }
 
-public boolean Capitals (String s)
-{
-
+public String noSpaces(String sWord){
+  String s = new String();
+  for (int i = 0; i < sWord.length(); i++)
+  {
+    if (!sWord.substring(i,i+1).equals(" "))
+    {
+      s += sWord.substring(i,i+1);
+    }
+  }
   
+  return s;
+}
+
+
+public int numLetters(String sString){
+  int x = 0;
+  for (int i = 0; i < sString.length(); i++)
+  {
+    if (Character.isLetter(sString.charAt(i)) == true)
+    {
+      x = x + 1;
+    }
+  }
+  
+  return x;  
+}
+
+public String noCapitals(String sWord){
+  return (sWord.toLowerCase());
+
 }
 
 
